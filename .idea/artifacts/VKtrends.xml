@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="VKtrends">
+    <output-path>$PROJECT_DIR$/out/artifacts/VKtrends</output-path>
+    <root id="archive" name="VKtrends.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="VKtrends" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="VKtrends/web/Web" />
+    </root>
+  </artifact>
+</component>
