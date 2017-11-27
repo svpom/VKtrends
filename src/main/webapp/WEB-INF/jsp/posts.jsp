@@ -5,5 +5,6 @@
 
 <body>
 <h2>Здесь будут посты.Zdes' budut posti.</h2>
+<h2><h2>${message}</h2></h2>
 </body>
 </html>
