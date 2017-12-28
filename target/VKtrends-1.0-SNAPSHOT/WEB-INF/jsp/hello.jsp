@@ -1,4 +1,5 @@
 <html>
+<%@ page pageEncoding="UTF-8" %>
 <head>
     <title>Hello Spring MVC</title>
 </head>

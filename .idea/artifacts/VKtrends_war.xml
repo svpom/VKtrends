@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="VKtrends:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="VKtrends-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="VKtrends:war exploded" />
+    </root>
+  </artifact>
+</component>

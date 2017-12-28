@@ -11,7 +11,6 @@ import javax.servlet.http.*;
 public class PostsController {
     @RequestMapping(method = RequestMethod.GET)
     public String getPosts(ModelMap model, HttpServletRequest request, HttpServletResponse respone) {
-        //model.addAttribute("message", "Hello Spring MVC Framework!");
         String text = request.getParameter("input-name");
         model.addAttribute("message", text);
         return "posts";
