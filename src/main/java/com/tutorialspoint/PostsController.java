@@ -24,9 +24,9 @@ import javax.net.ssl.HttpsURLConnection;
 @Controller
 @RequestMapping("/show-posts")
 public class PostsController {
-    private final int MAX_POSTS_CAN_GET = 100;
+    private final int MAX_POSTS_CAN_GET = 100;//by vk api
     private final String ACCESS_TOKEN =
-            "587ca5f3587ca5f3587ca5f3b858314fa85587c587ca5f30265146d92f285657d6f1c80";
+            "587ca5f3587ca5f3587ca5f3b858314fa85587c587ca5f30265146d92f285657d6f1c80";//from my old vk app ChatBox
     private final int SECONDS_IN_DAY = 86400;
 
     @RequestMapping(method = RequestMethod.GET)
@@ -39,9 +39,7 @@ public class PostsController {
                             @RequestParam(value = "years", defaultValue = "0") int years,
                             @RequestParam(value = "months", defaultValue = "0") int months,
                             @RequestParam(value = "days", defaultValue = "0") int days,
-                            ModelMap model/*,
-                            HttpServletRequest request,
-                            HttpServletResponse response*/) {
+                            ModelMap model) {
         //TODO: ВЫбрать место для обработки exceptions и обработать.
         ArrayList<Post> posts;
         String resultText = new String();
@@ -56,9 +54,7 @@ public class PostsController {
             resultText += errors.toString();
         }
 
-/*        String text = request.getParameter("input-name");
-        model.addAttribute("message", text);*/
-        model.addAttribute("message", resultText);//temporary for debug
+        model.addAttribute("message", resultText);
         return "posts";
     }
 
@@ -111,7 +107,7 @@ public class PostsController {
     }
 
 
-    private StringBuilder makeRequest(String addressOfCommunity, int offset) throws Exception {
+    private String makeRequest(String addressOfCommunity, int offset) throws Exception {
         //Из адреса сообщества составляем URL запроса к API.
         String addressForApi = composeApiUrl(addressOfCommunity, offset);
 
@@ -129,9 +125,11 @@ public class PostsController {
         while ((inputLine = in.readLine()) != null) {
             response.append(inputLine);
         }
-        in.close();
 
-        return response;
+        in.close();
+        //Здесь \n есть в response, а после парсинга JSON'a  - нет, парсер их почему-то удаляет как-то. Ниже - выход из ситуации.
+        String responseWithBrTag = response.toString().replace("\\n", "<br>");
+        return responseWithBrTag;
     }
 
     private String composeApiUrl(String addressOfCommunity, int offset) {
@@ -146,9 +144,9 @@ public class PostsController {
         return addressForApi;
     }
 
-    private ArrayList<Post> toPosts (StringBuilder response) throws Exception{
+    private ArrayList<Post> toPosts (String response) throws Exception{
         ObjectMapper objectMapper = new ObjectMapper();
-        JsonNode rootNode = objectMapper.readTree(response.toString());
+        JsonNode rootNode = objectMapper.readTree(response);
 
         JsonNode responseNode = rootNode.path("response");
         JsonNode itemsNode = responseNode.path("items");
@@ -160,10 +158,11 @@ public class PostsController {
 
             JsonNode dateNode = itemNode.path("date");
             JsonNode textNode = itemNode.path("text");
-
-            posts.add(new Post(dateNode.asLong(), new String(textNode.asText().getBytes("cp1251"), "UTF-8")));
+            //Создаём пост с указанной датой и текстом. До настройки setenv.bat tomcat'a требовалась перекодировка.
+            /*posts.add(new Post(dateNode.asLong(),
+                    new String(textNode.asText().getBytes("cp1251"), "UTF-8")));*/
+            posts.add(new Post(dateNode.asLong(), textNode.asText()));
         }
-
         return posts;
     }
 }
