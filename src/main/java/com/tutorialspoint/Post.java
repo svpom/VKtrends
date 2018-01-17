@@ -1,6 +1,9 @@
 package com.tutorialspoint;
 
-import java.time.LocalDate;
+import java.time.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class Post {
     long id;
@@ -9,6 +12,9 @@ public class Post {
     String text;
     long likesCount;
     /*TODO:Добавить attachements.*/
+    List<Photo> photos = new ArrayList<>();
+/*    List<Video> video = new;
+    List<Audio> audio = new;*/
 
     public Post(long id, long date, String text, long likesCount){
         this.id = id;
@@ -17,7 +23,30 @@ public class Post {
         this.likesCount = likesCount;
     }
 
+    @Override
     public String toString() {
-        return "<p>" + this.date + "(" + this.likesCount + " likes)" + "<br>" + this.text + "</p>";
+        StringBuilder htmlPostRepresent = new StringBuilder();
+        htmlPostRepresent.append("<p>").
+                append(Date.from( Instant.ofEpochSecond( this.date ) )).
+                append("(").
+                append(this.likesCount).
+                append(" likes)").
+                append("<br>").
+                append(this.text).
+                append("<br>");
+
+        //Проверяем пост на наличие у него прикрепленных файлов. Если есть - отображаем их тоже.
+        if (this.photos.size() != 0) {
+            for (Photo photo : photos) {
+                htmlPostRepresent.append(photo.toString());
+            }
+        }
+        //То же для аудио и видео.
+        htmlPostRepresent.append("</p>");
+        return htmlPostRepresent.toString();
+    }
+
+    public void addPhoto(String reference) {
+        this.photos.add(new Photo(reference));
     }
 }

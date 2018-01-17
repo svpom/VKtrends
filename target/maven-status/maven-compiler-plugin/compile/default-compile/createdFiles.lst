@@ -2,3 +2,4 @@ com\tutorialspoint\Post.class
 com\tutorialspoint\IndexController.class
 com\tutorialspoint\HelloController.class
 com\tutorialspoint\PostsController.class
+com\tutorialspoint\Photo.class

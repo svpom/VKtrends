@@ -26,6 +26,7 @@ public class PostsController {
     private final String ACCESS_TOKEN =
             "587ca5f3587ca5f3587ca5f3b858314fa85587c587ca5f30265146d92f285657d6f1c80";//from my old vk app ChatBox
     private final int SECONDS_IN_DAY = 86400;
+    private final int MAX_ATTACHMENTS_PER_POST = 10;//вроде максимум 10 приложений может быть к посту
 
     @RequestMapping(method = RequestMethod.GET)
     public String showPosts(@RequestParam("addresses") String addresses,
@@ -101,8 +102,7 @@ public class PostsController {
                     сообщение о том, что произошла ошибка и запрос будет повторен*//*
 
                 }*/
-            }
-            //selectedPosts.addAll(sortByDate(selectPostsByPercentage(allPosts, percentage)));
+        }
             selectedPosts.addAll(selectPostsByPercentage(allPostsForAddress, percentage));
         }
         return selectedPosts;
@@ -166,33 +166,44 @@ public class PostsController {
                     new String(textNode.asText().getBytes("cp1251"), "UTF-8")));*/
             JsonNode likesNode = itemNode.path("likes");
             JsonNode likesCountNode = likesNode.path("count");
-            posts.add(new Post(idNode.asLong(), dateNode.asLong(),
-                    textNode.asText(), likesCountNode.asLong()));
+/*            posts.add(new Post(idNode.asLong(), dateNode.asLong(),
+                    textNode.asText(), likesCountNode.asLong()));*/
+            Post post = new Post(idNode.asLong(), dateNode.asLong(),
+                    textNode.asText(), likesCountNode.asLong());
+
+            //Добавляем прикреплённые фото, видео, аудио.
+            JsonNode attachmentsNode = itemNode.path("attachments");
+            if (!attachmentsNode.isMissingNode()) {
+                for (int i = 0; i < MAX_ATTACHMENTS_PER_POST; i++) {
+                    JsonNode attachment = attachmentsNode.path(i);
+                    //Если приложение со следующим номером есть, то добавляем к объекту Post, а если нет - завершаем
+                    //добавление приложений.
+                    if (!attachment.isMissingNode()){
+                        JsonNode typeNode = attachment.path("type");
+                        switch (typeNode.asText()) {
+                            case "photo":
+                                JsonNode photoNode = attachment.path("photo");
+                                //В вк возможны варианты 75, 130, 604 и т.д. пикселей. ИМХО, 604 оптимально и есть почти для всех постов.
+                                JsonNode photo_604 = photoNode.path("photo_604");
+                                post.addPhoto(photo_604.asText());
+                                break;
+                            case "video":
+                                //code
+                                break;
+                            case "audio":
+                                //code
+                                break;
+                        }
+                    } else
+                        break;
+                }
+            }
+            posts.add(post);
         }
         return posts;
     }
 
     private ArrayList<Post> selectPostsByPercentage(ArrayList<Post> allPosts, int percentage){
-/*        //long[] likesCount = new long[allPosts.size()];
-        //упорядеченная в обратном порядке Map. Т.е.сперва идут посты с наибольшим числом лайков.
-        Map<Post, Long> postAndLikes = new TreeMap<>(Collections.reverseOrder());
-        for(*//**//*int i = 0; i < allPosts.size(); i++*//**//*Post post : allPosts){
-            //likesCount[i] = allPosts.get(i).likesCount;
-            postAndLikes.put(post, post.likesCount);
-        }
-        //число постов за период умножить на долю
-        int numberOfPostsToSelect = Math.round(allPosts.size() * percentage / 100);
-
-        ArrayList<Post> allSortedPosts = new ArrayList<>();
-        allSortedPosts.addAll(postAndLikes.keySet());*//*
-        ArrayList<Post> allSortedPosts = new ArrayList<>();
-
-        int numberOfPostsToSelect = Math.round(allPosts.size() * percentage / 100);
-        ArrayList<Post> selectedPosts = new ArrayList<>();
-        for(int i = 0; i < numberOfPostsToSelect; i ++){
-            selectedPosts.add(allSortedPosts.get(i));
-        }
-        return selectedPosts;*/
         //Записываем массив чисел лайков.
         long[] allPostsLikes = new long[allPosts.size()];
         for (int i = 0; i < allPosts.size(); i++)
@@ -206,11 +217,6 @@ public class PostsController {
         //Массив с числом лайков от наибольшего до меньшего значений в пределах указанного процента от общего числа.
         for (int i = 0; i < numberOfPostsToSelect; i++)
             selectedPostsLikes[i] = allPostsLikes[(allPosts.size() - 1) - i];
-        //Следующий блок - для дебага.
-        String txt = new String();
-        for (int i = 0; i < numberOfPostsToSelect; i++) {
-            txt += " i = " + selectedPostsLikes[i];
-        }
 
         ArrayList<Post> selectedPosts = new ArrayList<>();
         for (Post post : allPosts) {
@@ -226,16 +232,5 @@ public class PostsController {
         //свежие посты, но не с бОльшим числом лайков.
         return selectedPosts;
     }
-
-/*    private ArrayList<Post> sortByDate(ArrayList<Post> posts){
-        Map<Post, Long> postAndDate = new TreeMap<>(Collections.reverseOrder());
-        for(Post post : posts){
-            postAndDate.put(post, post.date);
-        }
-
-        ArrayList<Post> sortedPosts = new ArrayList<>();
-        sortedPosts.addAll(postAndDate.keySet());
-        return sortedPosts;
-    }*/
 }
 

@@ -7,17 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2787f686-3734-4057-bd40-ef078818eef7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/VKtrends-1.0-SNAPSHOT/WEB-INF/classes/com/tutorialspoint/Post.class" afterPath="$PROJECT_DIR$/target/VKtrends-1.0-SNAPSHOT/WEB-INF/classes/com/tutorialspoint/Post.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/VKtrends-1.0-SNAPSHOT/WEB-INF/classes/com/tutorialspoint/PostsController.class" afterPath="$PROJECT_DIR$/target/VKtrends-1.0-SNAPSHOT/WEB-INF/classes/com/tutorialspoint/PostsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/VKtrends.war" afterPath="$PROJECT_DIR$/target/VKtrends.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/tutorialspoint/Post.class" afterPath="$PROJECT_DIR$/target/classes/com/tutorialspoint/Post.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/tutorialspoint/PostsController.class" afterPath="$PROJECT_DIR$/target/classes/com/tutorialspoint/PostsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.txt" afterPath="$PROJECT_DIR$/README.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tutorialspoint/Post.java" afterPath="$PROJECT_DIR$/src/main/java/com/tutorialspoint/Post.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tutorialspoint/PostsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tutorialspoint/PostsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,19 +21,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tutorialspoint/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -66,8 +44,8 @@
       <file leaf-file-name="hello.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="133">
+              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -76,15 +54,16 @@
       <file leaf-file-name="PostsController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tutorialspoint/PostsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="220" column="26" lean-forward="true" selection-start-line="220" selection-start-column="26" selection-end-line="220" selection-end-column="26" />
+            <state relative-caret-position="190">
+              <caret line="184" column="78" lean-forward="false" selection-start-line="184" selection-start-column="78" selection-end-line="184" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6750#6756#0" expanded="true" />
-                <marker date="1516207467911" expanded="true" signature="1871:2079" ph="{...}" />
-                <marker date="1516207467911" expanded="true" signature="3059:4778" ph="{...}" />
-                <marker date="1516207467911" expanded="true" signature="3129:4582" ph="{...}" />
-                <marker date="1516207467911" expanded="true" signature="9747:10091" ph="{...}" />
+                <element signature="e#6753#6759#0" expanded="true" />
+                <marker date="1516223895764" expanded="true" signature="1973:2181" ph="{...}" />
+                <marker date="1516223895764" expanded="true" signature="3161:4781" ph="{...}" />
+                <marker date="1516223895764" expanded="true" signature="3231:4670" ph="{...}" />
+                <marker date="1516223895764" expanded="true" signature="6794:9141" ph="{...}" />
+                <marker date="1516223895764" expanded="true" signature="10124:10468" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -123,9 +102,30 @@
       <file leaf-file-name="Post.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tutorialspoint/Post.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="275">
+              <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1426#1427#0" expanded="true" />
+                <element signature="e#1479#1480#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Photo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tutorialspoint/Photo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+              <folding>
+                <element signature="e#107#108#0" expanded="true" />
+                <element signature="e#149#150#0" expanded="true" />
+                <element signature="e#184#185#0" expanded="true" />
+                <element signature="e#221#222#0" expanded="true" />
+                <element signature="e#270#271#0" expanded="true" />
+                <element signature="e#312#313#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,8 +175,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/posts.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/README.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tutorialspoint/Post.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tutorialspoint/Photo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tutorialspoint/Post.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tutorialspoint/PostsController.java" />
       </list>
     </option>
@@ -187,7 +188,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -390,15 +391,15 @@
       <workItem from="1515931969470" duration="18640000" />
       <workItem from="1516014893621" duration="12455000" />
       <workItem from="1516041485416" duration="10261000" />
-      <workItem from="1516201841684" duration="5634000" />
+      <workItem from="1516201841684" duration="16870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118237000" />
+    <option name="totallyTimeSpent" value="129473000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -410,7 +411,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28526148" sideWeight="0.5058565" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46434233" sideWeight="0.4941435" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34706813" sideWeight="0.4941435" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -444,14 +445,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VKtrends.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -473,11 +466,12 @@
           <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6750#6756#0" expanded="true" />
-            <marker date="1516207467911" expanded="true" signature="1871:2079" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3059:4778" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3129:4582" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="9747:10091" ph="{...}" />
+            <element signature="e#6753#6759#0" expanded="true" />
+            <marker date="1516223895764" expanded="true" signature="1973:2181" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3161:4781" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3231:4670" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="6794:9141" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="10124:10468" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -498,7 +492,7 @@
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -517,11 +511,12 @@
           <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6750#6756#0" expanded="true" />
-            <marker date="1516207467911" expanded="true" signature="1871:2079" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3059:4778" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3129:4582" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="9747:10091" ph="{...}" />
+            <element signature="e#6753#6759#0" expanded="true" />
+            <marker date="1516223895764" expanded="true" signature="1973:2181" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3161:4781" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3231:4670" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="6794:9141" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="10124:10468" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -589,7 +584,7 @@
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -616,11 +611,12 @@
           <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6750#6756#0" expanded="true" />
-            <marker date="1516207467911" expanded="true" signature="1871:2079" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3059:4778" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3129:4582" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="9747:10091" ph="{...}" />
+            <element signature="e#6753#6759#0" expanded="true" />
+            <marker date="1516223895764" expanded="true" signature="1973:2181" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3161:4781" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3231:4670" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="6794:9141" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="10124:10468" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -641,7 +637,7 @@
           <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -676,11 +672,12 @@
           <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6750#6756#0" expanded="true" />
-            <marker date="1516207467911" expanded="true" signature="1871:2079" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3059:4778" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3129:4582" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="9747:10091" ph="{...}" />
+            <element signature="e#6753#6759#0" expanded="true" />
+            <marker date="1516223895764" expanded="true" signature="1973:2181" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3161:4781" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3231:4670" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="6794:9141" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="10124:10468" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -790,7 +787,7 @@
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,14 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="315" column="0" lean-forward="true" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,14 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -858,25 +839,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tutorialspoint/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <folding>
+            <element signature="e#107#108#0" expanded="true" />
+            <element signature="e#149#150#0" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tutorialspoint/Post.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="275">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1426#1427#0" expanded="true" />
+            <element signature="e#1479#1480#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tutorialspoint/PostsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="220" column="26" lean-forward="true" selection-start-line="220" selection-start-column="26" selection-end-line="220" selection-end-column="26" />
+        <state relative-caret-position="190">
+          <caret line="184" column="78" lean-forward="false" selection-start-line="184" selection-start-column="78" selection-end-line="184" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6750#6756#0" expanded="true" />
-            <marker date="1516207467911" expanded="true" signature="1871:2079" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3059:4778" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="3129:4582" ph="{...}" />
-            <marker date="1516207467911" expanded="true" signature="9747:10091" ph="{...}" />
+            <element signature="e#6753#6759#0" expanded="true" />
+            <marker date="1516223895764" expanded="true" signature="1973:2181" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3161:4781" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="3231:4670" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="6794:9141" ph="{...}" />
+            <marker date="1516223895764" expanded="true" signature="10124:10468" ph="{...}" />
           </folding>
         </state>
       </provider>
