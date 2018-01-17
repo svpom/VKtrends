@@ -13,7 +13,7 @@
     <h2>Фильтры:</h2>
         <h3>Выбирать по числу...</h3>
         <input type="radio" name="by-likes">лайков<Br>
-        <input type="radio" name="by-reposts">репостов
+        <input type="radio" name="by-reposts">репостов(пока не работает)
 
         <h3>Доля выбираемых записей:</h3>
         <input type="number" name="percentage"> %<Br>

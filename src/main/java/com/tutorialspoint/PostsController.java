@@ -10,14 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 /*import javax.servlet.http.*;*/
 import java.io.*;
 import java.time.Instant;
-import java.util.ArrayList;
+import java.util.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.util.Iterator;
-import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
 
@@ -64,12 +62,14 @@ public class PostsController {
         String[] addressesArray = addresses.split("\\r\\n");
 
         //Объявляем список постов и вычисляем текущее время и период поиска постов в unixtime
-        ArrayList<Post> allPosts = new ArrayList<>();
+        /*ArrayList<Post> allPosts = new ArrayList<>();*/
         long currentDate = Instant.now().getEpochSecond();
         long searchPeriod = (years * 365 + months * 31 + days) *
                 SECONDS_IN_DAY;
+        ArrayList<Post> selectedPosts = new ArrayList<>();
 
         for (String address : addressesArray) {
+            ArrayList<Post> allPostsForAddress = new ArrayList<>();
             boolean postDateReachesTimeBorder = false;
             int offsetOfPosts = 0;
 
@@ -82,11 +82,11 @@ public class PostsController {
                 if (offsetOfPosts == 0) posts.remove(0);
 
                 if (currentDate - posts.get(posts.size() - 1).date < searchPeriod) {
-                    allPosts.addAll(posts);
+                    allPostsForAddress.addAll(posts);
                 } else {
                     for (Post post : posts) {
                         if (currentDate - post.date < searchPeriod) {
-                            allPosts.add(post);
+                            allPostsForAddress.add(post);
                         } else {
                             postDateReachesTimeBorder = true;
                             break;
@@ -102,8 +102,10 @@ public class PostsController {
 
                 }*/
             }
+            //selectedPosts.addAll(sortByDate(selectPostsByPercentage(allPosts, percentage)));
+            selectedPosts.addAll(selectPostsByPercentage(allPostsForAddress, percentage));
         }
-        return allPosts;
+        return selectedPosts;
     }
 
 
@@ -158,12 +160,82 @@ public class PostsController {
 
             JsonNode dateNode = itemNode.path("date");
             JsonNode textNode = itemNode.path("text");
+            JsonNode idNode = itemNode.path("id");
             //Создаём пост с указанной датой и текстом. До настройки setenv.bat tomcat'a требовалась перекодировка.
             /*posts.add(new Post(dateNode.asLong(),
                     new String(textNode.asText().getBytes("cp1251"), "UTF-8")));*/
-            posts.add(new Post(dateNode.asLong(), textNode.asText()));
+            JsonNode likesNode = itemNode.path("likes");
+            JsonNode likesCountNode = likesNode.path("count");
+            posts.add(new Post(idNode.asLong(), dateNode.asLong(),
+                    textNode.asText(), likesCountNode.asLong()));
         }
         return posts;
     }
+
+    private ArrayList<Post> selectPostsByPercentage(ArrayList<Post> allPosts, int percentage){
+/*        //long[] likesCount = new long[allPosts.size()];
+        //упорядеченная в обратном порядке Map. Т.е.сперва идут посты с наибольшим числом лайков.
+        Map<Post, Long> postAndLikes = new TreeMap<>(Collections.reverseOrder());
+        for(*//**//*int i = 0; i < allPosts.size(); i++*//**//*Post post : allPosts){
+            //likesCount[i] = allPosts.get(i).likesCount;
+            postAndLikes.put(post, post.likesCount);
+        }
+        //число постов за период умножить на долю
+        int numberOfPostsToSelect = Math.round(allPosts.size() * percentage / 100);
+
+        ArrayList<Post> allSortedPosts = new ArrayList<>();
+        allSortedPosts.addAll(postAndLikes.keySet());*//*
+        ArrayList<Post> allSortedPosts = new ArrayList<>();
+
+        int numberOfPostsToSelect = Math.round(allPosts.size() * percentage / 100);
+        ArrayList<Post> selectedPosts = new ArrayList<>();
+        for(int i = 0; i < numberOfPostsToSelect; i ++){
+            selectedPosts.add(allSortedPosts.get(i));
+        }
+        return selectedPosts;*/
+        //Записываем массив чисел лайков.
+        long[] allPostsLikes = new long[allPosts.size()];
+        for (int i = 0; i < allPosts.size(); i++)
+            allPostsLikes[i] = allPosts.get(i).likesCount;
+        //Сортируем массив числа лайков в порядке ВОЗРАСТАНИЯ.
+        Arrays.sort(allPostsLikes);
+
+        //число постов за период умножить на долю
+        int numberOfPostsToSelect = Math.round(allPosts.size() * percentage / 100);
+        long[] selectedPostsLikes = new long[numberOfPostsToSelect];
+        //Массив с числом лайков от наибольшего до меньшего значений в пределах указанного процента от общего числа.
+        for (int i = 0; i < numberOfPostsToSelect; i++)
+            selectedPostsLikes[i] = allPostsLikes[(allPosts.size() - 1) - i];
+        //Следующий блок - для дебага.
+        String txt = new String();
+        for (int i = 0; i < numberOfPostsToSelect; i++) {
+            txt += " i = " + selectedPostsLikes[i];
+        }
+
+        ArrayList<Post> selectedPosts = new ArrayList<>();
+        for (Post post : allPosts) {
+            //Если в массиве наибольших лайков есть значение, равное числу лайков у конкретного поста.
+            for (int i = 0; i < numberOfPostsToSelect; i++) {
+                if (post.likesCount == selectedPostsLikes[i]) {
+                    selectedPosts.add(post);
+                    break;
+                }
+            }
+        }
+        //Причём заметь, что по постам проходимся от новых до старых, т.е. сперва будут идти более
+        //свежие посты, но не с бОльшим числом лайков.
+        return selectedPosts;
+    }
+
+/*    private ArrayList<Post> sortByDate(ArrayList<Post> posts){
+        Map<Post, Long> postAndDate = new TreeMap<>(Collections.reverseOrder());
+        for(Post post : posts){
+            postAndDate.put(post, post.date);
+        }
+
+        ArrayList<Post> sortedPosts = new ArrayList<>();
+        sortedPosts.addAll(postAndDate.keySet());
+        return sortedPosts;
+    }*/
 }
 
