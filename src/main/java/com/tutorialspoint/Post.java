@@ -13,8 +13,9 @@ public class Post {
     long likesCount;
     /*TODO:Добавить attachements.*/
     List<Photo> photos = new ArrayList<>();
-/*    List<Video> video = new;
-    List<Audio> audio = new;*/
+/*    List<Video> videos = new;
+    List<Audio> audios = new;*/
+    List<Gif> gifs = new ArrayList<>();
 
     public Post(long id, long date, String text, long likesCount){
         this.id = id;
@@ -42,11 +43,20 @@ public class Post {
             }
         }
         //То же для аудио и видео.
+        if (this.gifs.size() != 0) {
+            for (Gif gif : gifs) {
+                htmlPostRepresent.append(gif.toString());
+            }
+        }
         htmlPostRepresent.append("</p>");
         return htmlPostRepresent.toString();
     }
 
     public void addPhoto(String reference) {
         this.photos.add(new Photo(reference));
+    }
+
+    public void addGif(String reference) {
+        this.gifs.add(new Gif(reference));
     }
 }

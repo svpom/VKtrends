@@ -1,18 +1,8 @@
 package com.tutorialspoint;
 
-public class Photo {
-    String reference;
-
+public class Photo extends Attachment{
     public Photo(String reference){
-        this.reference = reference;
-    }
-
-    public String getReference(){
-        return this.reference;
-    }
-
-    public void setReference(String reference){
-        this.reference = reference;
+        super(reference);
     }
 
     @Override

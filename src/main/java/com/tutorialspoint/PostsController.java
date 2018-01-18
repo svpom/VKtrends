@@ -193,6 +193,12 @@ public class PostsController {
                             case "audio":
                                 //code
                                 break;
+                            case "doc"://Для GIF.
+                                JsonNode docNode = attachment.path("doc");
+                                JsonNode extNode = docNode.path("ext");
+                                if(extNode.asText().equals("gif"))
+                                    post.addGif(docNode.path("url").asText());
+                                break;
                         }
                     } else
                         break;
